@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WAREHOUSE INVENTORY MANAGEMENT SYSTEM ENTRY FORM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f2f2f2;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-blend-mode: darken;
+            padding: 40px;
+            background-image: url('warehouse.jpeg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        input[type="checkbox"],
+input[type="radio"] {
+  width: 15px;
+  height: 15px;
+  padding-right: 2px;
+  padding-bottom: 5px;
+}
+
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            
+            padding: 30px;
+            max-width: 500px;
+            max-height : 1500px;
+            margin: auto;
+            border-radius: 30px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            background: rgba(228, 220, 220, 0.941); /* semi-transparent */
+            backdrop-filter: blur(10px);         /* actual blur effect */
+            -webkit-backdrop-filter: blur(5px); /* for Safari support */
+            padding: 30px;
+            max-width: 1000px;
+            margin: auto;
+            margin-top: 5px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        label {
+            font-weight: 250;
+            display: block;
+            margin-top: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:17px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            text-align: center;
+            font-size: medium;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #40bdf7;
+            color: rgb(27, 26, 26);
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+input[type="date"] {
+  font-size: 16px;     /* Text size */
+  padding: 10px;       /* Space inside the input */
+  height: 40px;        /* Total height */
+  width: 100%;         /* or fixed like 250px */
+  border-radius: 6px;  /* Rounded corners */
+  border: 1px solid #ccc;
+}
+select {
+  color: #1a1a1a;        /* Dark text color */
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+   input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+
+<form action="/add-product" method="post">
+
+
+    <h2 style="grid-column: span 2;">WAREHOUSE INVENTORY MANAGEMENT SYSTEM ENTRY FORM</h2>
+
+    <div class="form-grid">
+
+        <!-- Left Column -->
+        <div>
+            <label for="pid">Product ID:</label>
+            <select id="pid" name="product_id" required>
+                <option value="" ">Please select the Product ID from the below</option>
+                <option value="P101">P101</option>
+                <option value="P102">P102</option>
+                <option value="P103">P103</option>
+                <option value="P104">P104</option>
+                <option value="P105">P105</option>
+            </select>
+
+            <label for="pname">Product Name:</label>
+            <input type="text" id="pname" name="product_name" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="">Please select the Category from the below</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Books">Books</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <!-- Supplier Name Section -->
+<label>Supplier Name:</label>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px 30px; margin-bottom: 15px; justify-items: start;">
+  <label style="font-weight: normal;"><input type="checkbox" name="supplier_name" value="ABC Traders"> ABC Traders</label>
+  <label style="font-weight: normal;"><input type="checkbox" name="supplier_name" value="XYZ Wholesalers"> XYZ Wholesalers</label>
+  <label style="font-weight: normal;"><input type="checkbox" name="supplier_name" value="Global Supplies"> Global Supplies</label>
+  <label style="font-weight: normal;"><input type="checkbox" name="supplier_name" value="Tech Distributors"> Tech Distributors</label>
+</div>
+
+
+
+        </div>
+
+        <!-- Right Column -->
+        <div>
+            <label for="entry">Date of Entry:</label>
+            <input type="date" id="entry" name="date_of_entry" required>
+
+            <label for="expiry">Date of Expiry:</label>
+            <input type="date" id="expiry" name="date_of_expiry">
+
+            <label for="status">Availability Status:</label>
+            <select id="status" name="availability_status" required>
+                <option value="">Please select the Status from the below</option>
+                <option value="Available">Available</option>
+                <option value="Out of Stock">Out of Stock</option>
+                <option value="Discontinued">Discontinued</option>
+            </select>
+
+            <label style= display:block;">Warehouse Location (Rack):</label>
+<div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 35px; flex-wrap: wrap;">
+  <label><input type="radio" name="warehouse_location" value="Rack 1" required> Rack 1</label>
+  <label><input type="radio" name="warehouse_location" value="Rack 2"> Rack 2</label>
+  <label><input type="radio" name="warehouse_location" value="Rack 3"> Rack 3</label>
+  <label><input type="radio" name="warehouse_location" value="Rack 4"> Rack 4</label>
+  <label><input type="radio" name="warehouse_location" value="Rack 5"> Rack 5</label>
+</div>
+
+
+            <label for="brand">Brand:</label>
+            <select id="brand" name="brand" required>
+                <option value="">Please select the Brand from the below</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Nike">Nike</option>
+                <option value="Apple">Apple</option>
+                <option value="IKEA">IKEA</option>
+                <option value="Sony">Sony</option>
+            </select>
+        </div>
+    </div>
+
+    <input type="submit" value="ADD PRODUCT" style="grid-column: span 2;">
+</form>
+ <script>
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+    // Set it as the value of the date input
+    document.getElementById('entry').value = today;
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WAREHOUSE INVENTORY MANAGEMENT SYSTEM</title>
+    <style>
+        body {
+            background-image: url('login_photo.avif'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            font-weight: Medium;
+        }
+
+        .login-container {
+            position:center;
+            width: 500px;
+            height:300px;
+            margin: 100px auto;
+            padding: 30px;
+            background: #fae5b8;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+
+        h2 {
+            font-family: 'Poppins', sans-serif;         
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-weight: Medium;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #06c3f2;
+            color: rgb(18, 2, 2);
+            border: none;
+            margin-top: 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: Bold;
+            font-size: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background: #9ad9e1;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>WAREHOUSE INVENTORY MANAGEMENT SYSTEM</h2>
+    <form action="product_add.html" method="get">
+
+        <label for="username">USERNAME</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">PIN</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="LOGIN">
+        
+
+    </form>
+</div>
+
+</body>
+</html>
